@@ -1,1 +1,20 @@
-<p>header works!</p>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/LogoPhone.png" width="90" height="80" alt="Logo">
+            <a href="#">TechMobile</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a routerLink="/" class="active">Inicio</a></li>
+                <li><a href="#products">Celulares</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <a routerLink="/cart">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </div>
+</header>

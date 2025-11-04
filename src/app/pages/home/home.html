@@ -1,1 +1,106 @@
-<p>home works!</p>
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>La Tecnología Móvil a tu Alcance</h1>
+        <p>Descubre los últimos smartphones con el mejor rendimiento y diseño.</p>
+        <a href="#products" class="btn btn-primary">Ver Catálogo</a>
+    </div>
+</section>
+
+<section id="products" class="product-listing">
+    <div class="container">
+        <h2>Nuestros Productos Destacados</h2>
+
+        <div class="product-grid">
+            <div class="product-card" data-product-name="iPhone 16 Pro Max">
+                <img src="images/iphone16.png" alt="iPhone 16 Pro Max">
+                <div class="card-content">
+                    <h3>iPhone 16 Pro Max</h3>
+                    <p class="description">El iPhone 16 Pro tiene un sofisticado diseño de titanio grado 5 con
+                        una nueva textura microarenada.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/5.399</span>
+                    <button class="btn btn-add-to-cart" data-product-id="1">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-name="Samsung Galaxy S24 Ultra">
+                <img src="images/samsungS24.png" alt="Samsung Galaxy S24 Ultra">
+                <div class="card-content">
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p class="description">Perfecta para los amantes del plano detalle. Su zoom óptico te
+                        ofrecerá la posibilidad de realizar acercamientos sin que tus capturas pierdan calidad.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/3.399</span>
+                    <button class="btn btn-add-to-cart" data-product-id="2">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-name="Xiaomi 14 Ultra">
+                <img src="images/xiaomi14ultra.png" alt="Xiaomi 14 Ultra">
+                <div class="card-content">
+                    <h3>Xiaomi 14 Ultra</h3>
+                    <p class="description">El Xiaomi 14 Ultra cuenta con un nuevo marco de aluminio unibody
+                        6M42, Cristal Xiaomi Shield y un cuero vegano nanotecnológico Xiaomi de última
+                        generación.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/5.999 </span>
+                    <button class="btn btn-add-to-cart" data-product-id="3">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-name="Motorola Razr 50 Ultra">
+                <img src="images/motorola50.png" alt="Motorola Razr 50 Ultra">
+                <div class="card-content">
+                    <h3>Motorola Razr 50 Ultra</h3>
+                    <p class="description">Pasa de la pantalla ultracompacta a la increíble pantalla pOLED de
+                        6.9" de tamaño completo con solo abrir el teléfono.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/4.299 </span>
+                    <button class="btn btn-add-to-cart" data-product-id="4">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-name="OnePlus 12">
+                <img src="images/oneplus12.png" alt="OnePlus 12">
+                <div class="card-content">
+                    <h3>OnePlus 12</h3>
+                    <p class="description">El OnePlus 12 es un móvil de alta gama con prestaciones
+                        espectaculares, desde su pantalla hasta su rendimiento, cámara y opciones de
+                        conectividad.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/5.499 </span>
+                    <button class="btn btn-add-to-cart" data-product-id="5">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-product-name="Realme GT 5 Pro">
+                <img src="images/honor7pro.png" alt="Realme GT 5 Pro">
+                <div class="card-content">
+                    <h3>Honor Magic 7 Pro</h3>
+                    <p class="description">El Honor Magic 7 Pro redefine la experiencia móvil con una
+                        combinación de fotografía avanzada, rendimiento extremo y batería de larga duración.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">S/4.399 </span>
+                    <button class="btn btn-add-to-cart" data-product-id="6">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="addToCartModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p id="modal-message"></p>
+        <button class="btn btn-primary" id="continueShoppingBtn">Seguir Comprando</button>
+        <button class="btn btn-secondary" id="viewCartBtn" onclick="window.location.href='cart.html'">Ver
+            Carrito</button>
+    </div>
+</div>
