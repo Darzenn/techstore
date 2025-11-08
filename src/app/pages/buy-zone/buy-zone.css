@@ -1,0 +1,107 @@
+/* --- Estilos generales de la zona de pago --- */
+.payment-form {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 2rem auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* --- Grupos del formulario --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.3rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #6a1b9a;
+    /* tono violeta que combina con tu banner */
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
+    background-color: #fff;
+}
+
+/* --- Select personalizado --- */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='%23666' d='M4 6l4 4 4-4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* --- Textarea --- */
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* --- Botón principal del formulario --- */
+.payment-form .btn.btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+    border: none;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.payment-form .btn.btn-primary:hover {
+    background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+    transform: translateY(-2px);
+}
+
+/* --- Adaptación móvil --- */
+@media (max-width: 768px) {
+    .payment-form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .payment-form h3 {
+        font-size: 1.3rem;
+    }
+}

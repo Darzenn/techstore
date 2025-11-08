@@ -1,0 +1,87 @@
+<!-- Sección principal de pago -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Finaliza tu Compra</h1>
+        <p>Revisa tu pedido y completa tus datos para recibir tu producto.</p>
+    </div>
+</section>
+
+<section id="checkout" class="product-listing">
+    <div class="container">
+        <h2>Detalles del Pedido</h2>
+
+        <div class="checkout-grid">
+            <!-- Resumen del pedido -->
+            <div class="order-summary">
+                <h3>Tu Pedido</h3>
+                <div class="product-card">
+                    <img src="images/iphone16.png" alt="iPhone 16 Pro Max">
+                    <div class="card-content">
+                        <h4>iPhone 16 Pro Max</h4>
+                        <p>Cantidad: 1</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">S/5.399</span>
+                    </div>
+                </div>
+                <div class="order-total">
+                    <p><strong>Total:</strong> S/5.399</p>
+                </div>
+            </div>
+
+            <!-- Formulario de pago -->
+            <div class="payment-form">
+                <h3>Información de Envío y Pago</h3>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="metodo-pago">Método de pago</label>
+                        <select id="metodo-pago" name="metodo-pago" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="tarjeta">Tarjeta de crédito o débito</option>
+                            <option value="yape">Yape / Plin</option>
+                            <option value="transferencia">Transferencia bancaria</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios (opcional)</label>
+                        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de confirmación -->
+<div id="addToCartModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p id="modal-message">Tu pedido ha sido confirmado. ¡Gracias por tu compra!</p>
+        <button class="btn btn-primary" id="continueShoppingBtn" onclick="window.location.href='index.html'">
+            Volver al Inicio
+        </button>
+    </div>
+</div>
