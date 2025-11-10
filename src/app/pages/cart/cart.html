@@ -1,17 +1,31 @@
-
 <section class="container">
     <div class="cart-title">
         <h2>Tu Carrito de Compras</h2>
     </div>
 
+    <div *ngIf="items.length === 0">
+        <p>El carrito está vacío.</p>
+    </div>
+
     <div id="cart-items-container">
-        <!-- Aquí se cargarán los productos del carrito -->
+        <div *ngFor="let item of items" class="carrito-item">
+            <img [src]="item.imagen" alt="{{ item.nombre }}" width="80">
+            <div>
+                <h4>{{ item.nombre }}</h4>
+                <p>Cantidad: {{ item.cantidad }}</p>
+                <p>Precio unitario: S/ {{ item.precio }}</p>
+                <p><strong>Subtotal: S/ {{ item.precio * item.cantidad }}</strong></p>
+                <button (click)="eliminar(item.id)" eliminar-item>Eliminar</button>
+            </div>
+        </div>
     </div>
 
     <div class="cart-summary">
-        <p id="total-price">Total: S/0</p>
-        <button class="checkout-btn" id="checkout-btn" onclick="window.location.href='/zonaPago'">Proceder al Pago</button>
+        <p id="total-price">Total: S/ {{ total }}</p>
+        <button class="checkout-btn" (click)="vaciar()" *ngIf="items.length > 0">Vaciar carrito</button>
+        <br>
+        <br>
+        <button class="checkout-btn" id="checkout-btn" onclick="window.location.href='/zonaPago'">Proceder al
+            Pago</button>
     </div>
 </section>
-
-

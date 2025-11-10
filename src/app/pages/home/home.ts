@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Product, Products } from '../../services/products';
+import { Product, ProductsService } from '../../services/products';
+import { CartService } from '../../services/cart';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,19 @@ import { Product, Products } from '../../services/products';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
+
 export class Home {
   productos: Product[] = [];
-  constructor(private producto: Products) {
 
+  constructor(
+    private producto: ProductsService,
+    private carrito: CartService
+  ) {
+    this.productos = this.producto.getProducts();
+  }
+
+  agregarAlCarrito(producto: Product) {
+    this.carrito.addToCart(producto);
   }
 
 }

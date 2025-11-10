@@ -78,3 +78,41 @@ body {
 .remove-btn:hover {
     background-color: #c82333;
 }
+
+button[eliminar-item] {
+    background-color: #ff4444;
+    /* rojo moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(255, 68, 68, 0.25);
+}
+
+/* Hover: tono más claro y leve levantamiento */
+button[eliminar-item]:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(255, 107, 107, 0.35);
+}
+
+/* Active (clic): leve reducción */
+button[eliminar-item]:active {
+    transform: scale(0.97);
+}
+
+/* Si quieres hacerlo discreto en modo oscuro o minimalista */
+button[eliminar-item].minimal {
+    background-color: transparent;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+button[eliminar-item].minimal:hover {
+    background-color: #ff4444;
+    color: white;
+}

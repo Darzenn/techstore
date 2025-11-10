@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 
+export interface Product {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  imagen: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 
-export interface Product {
-  id: Number;
-  nombre: String;
-  descripcion: String;
-  precio: Number;
-  imagen: String
-}
-
-export class Products {
+export class ProductsService {
 
   private products: Product[] = [
     {
@@ -66,7 +66,11 @@ export class Products {
 
   constructor() { }
 
-  getProducts(): Product[]{
+  getProducts(): Product[] {
     return this.products;
+  }
+
+  getProductById(id: number): Product | undefined {
+    return this.products.find(p => p.id === id);
   }
 }
