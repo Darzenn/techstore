@@ -10,7 +10,7 @@
         <h2>Detalles del Pedido</h2>
 
         <div class="checkout-grid">
-            <!-- 🧺 Resumen del pedido -->
+            <!-- Resumen del pedido -->
             <div class="order-summary">
                 <h3>Tu Pedido</h3>
 
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <!-- 💳 Formulario de pago -->
+            <!-- Formulario de pago -->
             <div class="payment-form">
                 <h3>Información de Envío y Pago</h3>
                 <form (ngSubmit)="confirmarPedido()" #paymentForm="ngForm">
@@ -76,7 +76,7 @@
     </div>
 </section>
 
-<!-- ✅ Modal / Mensaje de confirmación -->
+<!-- Modal / Mensaje de confirmación -->
 <div *ngIf="pedidoConfirmado" class="modal">
     <div class="modal-content">
         <p>✅ Tu pedido ha sido confirmado. ¡Gracias por tu compra!</p>

@@ -18,7 +18,7 @@ export class CartService {
   cart$ = this.cartSubject.asObservable();
 
   constructor() {
-    // 🔹 Verificar que estamos en el navegador antes de usar localStorage
+    // Verifica que estamos en el navegador antes de usar localStorage
     if (typeof window !== 'undefined' && localStorage.getItem('cart')) {
       const savedCart = localStorage.getItem('cart');
       if (savedCart) {
