@@ -105,3 +105,136 @@
         font-size: 1.3rem;
     }
 }
+
+.checkout-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+    min-height: 70vh;
+}
+
+.order-summary {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-summary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.order-summary h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #eee;
+    padding: 0.8rem 0;
+}
+
+.product-card:last-child {
+    border-bottom: none;
+}
+
+.product-card img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h4 {
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+.card-content p {
+    margin: 0.2rem 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.order-total {
+    margin-top: 1.5rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .checkout-grid {
+        padding: 1rem;
+    }
+
+    .order-summary {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .product-card img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #d4af37, #b8921a);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b8921a, #d4af37);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:disabled {
+  background: #ccc;
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.8;
+}

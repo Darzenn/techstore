@@ -1,4 +1,3 @@
-<!-- Sección principal de pago -->
 <section class="hero-section">
     <div class="hero-content">
         <h1>Finaliza tu Compra</h1>
@@ -6,56 +5,61 @@
     </div>
 </section>
 
-<section id="checkout" class="product-listing">
+<section *ngIf="!pedidoConfirmado" id="checkout" class="product-listing">
     <div class="container">
         <h2>Detalles del Pedido</h2>
 
         <div class="checkout-grid">
-            <!-- Resumen del pedido -->
+            <!-- 🧺 Resumen del pedido -->
             <div class="order-summary">
                 <h3>Tu Pedido</h3>
-                <div class="product-card">
-                    <img src="images/iphone16.png" alt="iPhone 16 Pro Max">
+
+                <div *ngIf="items.length === 0">
+                    <p>No hay productos en tu carrito.</p>
+                </div>
+
+                <div *ngFor="let item of items" class="product-card">
+                    <img [src]="item.imagen" alt="{{ item.nombre }}" width="80">
                     <div class="card-content">
-                        <h4>iPhone 16 Pro Max</h4>
-                        <p>Cantidad: 1</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="price">S/5.399</span>
+                        <h4>{{ item.nombre }}</h4>
+                        <p>Cantidad: {{ item.cantidad }}</p>
+                        <p>Precio unitario: S/{{ item.precio }}</p>
+                        <p><strong>Subtotal: S/{{ item.precio * item.cantidad }}</strong></p>
                     </div>
                 </div>
-                <div class="order-total">
-                    <p><strong>Total:</strong> S/5.399</p>
+
+                <div class="order-total" *ngIf="items.length > 0">
+                    <p><strong>Total:</strong> S/{{ total }}</p>
                 </div>
             </div>
 
-            <!-- Formulario de pago -->
+            <!-- 💳 Formulario de pago -->
             <div class="payment-form">
                 <h3>Información de Envío y Pago</h3>
-                <form id="paymentForm">
+                <form (ngSubmit)="confirmarPedido()" #paymentForm="ngForm">
                     <div class="form-group">
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre" ngModel required>
                     </div>
 
                     <div class="form-group">
                         <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" name="direccion" required>
+                        <input type="text" id="direccion" name="direccion" ngModel required>
                     </div>
 
                     <div class="form-group">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required>
+                        <input type="tel" id="telefono" name="telefono" ngModel required>
                     </div>
 
                     <div class="form-group">
                         <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" required>
+                        <input type="email" id="correo" name="correo" ngModel required>
                     </div>
 
                     <div class="form-group">
                         <label for="metodo-pago">Método de pago</label>
-                        <select id="metodo-pago" name="metodo-pago" required>
+                        <select id="metodo-pago" name="metodo-pago" ngModel required>
                             <option value="">Selecciona una opción</option>
                             <option value="tarjeta">Tarjeta de crédito o débito</option>
                             <option value="yape">Yape / Plin</option>
@@ -63,25 +67,18 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="comentarios">Comentarios (opcional)</label>
-                        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                    <button type="submit" [disabled]="items.length === 0">
+                        Confirmar Pedido
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Modal de confirmación -->
-<div id="addToCartModal" class="modal">
+<!-- ✅ Modal / Mensaje de confirmación -->
+<div *ngIf="pedidoConfirmado" class="modal">
     <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <p id="modal-message">Tu pedido ha sido confirmado. ¡Gracias por tu compra!</p>
-        <button class="btn btn-primary" id="continueShoppingBtn" onclick="window.location.href='index.html'">
-            Volver al Inicio
-        </button>
+        <p>✅ Tu pedido ha sido confirmado. ¡Gracias por tu compra!</p>
     </div>
 </div>
